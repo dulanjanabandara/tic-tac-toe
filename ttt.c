@@ -84,3 +84,63 @@ int verifySelection(int iSquare, int iPlayer) {
     }
 }
 
+// checkForWin function definition
+void checkForWin() {
+    int catTotal;
+    int x;
+
+    if (board[0] == 'X' && board[1] == 'X' && board[2] == 'X')
+        cWhoWon = 'X';
+    else if (board[3] == 'X' && board[4] == 'X' && board[5] == 'X')
+        cWhoWon = 'X';
+    else if (board[6] == 'X' && board[7] == 'X' && board[8] == 'X')
+        cWhoWon = 'X';
+    else if (board[0] == 'X' && board[3] == 'X' && board[6] == 'X')
+        cWhoWon = 'X';
+    else if (board[1] == 'X' && board[4] == 'X' && board[7] == 'X')
+        cWhoWon = 'X';
+    else if (board[2] == 'X' && board[5] == 'X' && board[8] == 'X')
+        cWhoWon = 'X';
+    else if (board[0] == 'X' && board[4] == 'X' && board[8] == 'X')
+        cWhoWon = 'X';
+    else if (board[2] == 'X' && board[4] == 'X' && board[6] == 'X')
+        cWhoWon = 'X';
+    else if (board[0] == 'O' && board[1] == 'O' && board[2] == 'O')
+        cWhoWon = 'O';
+    else if (board[3] == 'O' && board[4] == 'O' && board[5] == 'O')
+        cWhoWon = 'O';
+    else if (board[6] == 'O' && board[7] == 'O' && board[8] == 'O')
+        cWhoWon = 'O';
+    else if (board[0] == 'O' && board[3] == 'O' && board[6] == 'O')
+        cWhoWon = 'O';
+    else if (board[1] == 'O' && board[4] == 'O' && board[7] == 'O')
+        cWhoWon = 'O';
+    else if (board[2] == 'O' && board[5] == 'O' && board[8] == 'O')
+        cWhoWon = 'O';
+    else if (board[0] == 'O' && board[4] == 'O' && board[8] == 'O')
+        cWhoWon = 'O';
+    else if (board[2] == 'O' && board[4] == 'O' && board[6] == 'O')
+        cWhoWon = 'O';
+    
+    if (cWhoWon == 'X') {
+        printf("\nX Wins!\n");
+        return;
+    }
+
+    if (cWhoWon == 'O') {
+        printf("\nO Wins!\n");
+        return;
+    }
+
+    // Checking for a draw
+    for ( x = 0; x < 9; x++ ) {
+        if ( board[x] != ' ' )
+        catTotal += 1;
+    }
+
+    if ( catTotal == 9 ) {
+        cWhoWon = 'C';
+        printf("\nCAT Game!\n");
+        return;
+    }
+}
