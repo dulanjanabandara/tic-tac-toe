@@ -13,6 +13,13 @@ int iCurrentPlayer = 0;
 
 // main function
 int main(){
+    int x;
+    int iSquareNum = 0;
+
+    for (x = 0; x < 9; x++) {
+        board[x] = ' ';   
+    }
+    displayBoard();
 
     return 0;
 }
